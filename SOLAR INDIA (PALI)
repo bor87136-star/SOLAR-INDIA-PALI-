@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solar India Pali Branch</title>
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f4f9f4;
+      color: #212121;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #006400 0%, #228b22 100%);
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header .logo {
+      font-weight: 900;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      font-family: 'Arial Black', Gadget, sans-serif;
+      text-transform: uppercase;
+    }
+    header nav a {
+      margin: 0 1rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #ffd700;
+    }
+    header .contact-number {
+      font-weight: 700;
+      background: #ffd700;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      color: #006400;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 1rem;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,100,0, 0.6);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    .hero-content p {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    }
+    .btn-primary {
+      background: #ffd700;
+      color: #006400;
+      padding: 0.75rem 2rem;
+      font-weight: 700;
+      border-radius: 50px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 0 10px #ffd7006e;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: #e6c200;
+      box-shadow: 0 0 15px #e6c200;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 3rem 2rem;
+      background: white;
+      max-width: 1200px;
+      margin: 3rem auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    }
+    .services h2 {
+      text-align: center;
+      color: #006400;
+      margin-bottom: 2rem;
+      font-size: 2.4rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 1.5rem;
+    }
+    .service-item {
+      background: #e9f5e9;
+      flex: 1 1 250px;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 3px 12px rgba(0,100,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 20px rgba(0,100,0,0.2);
+    }
+    .service-item h3 {
+      color: #2c6b2c;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .service-item p {
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #2f2f2f;
+    }
+
+    /* Products Catalog */
+    .catalog-section {
+      background: #f0f9f0;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 3rem auto 5rem auto;
+      border-radius: 15px;
+    }
+    .catalog-section h2 {
+      color: #006400;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-size: 2.3rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 2rem;
+    }
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .product-card:hover {
+      box-shadow: 0 6px 30px rgba(0,100,0,0.2);
+    }
+    .product-card img {
+      max-width: 120px;
+      margin-bottom: 1.2rem;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+    .product-card h4 {
+      color: #236123;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .product-card ul {
+      font-size: 0.95rem;
+      color: #444;
+      list-style: inside disc;
+      text-align: left;
+      padding-left: 0;
+      line-height: 1.4;
+    }
+    .product-card ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: #228b22;
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-radius: 15px;
+      max-width: 1200px;
+      margin: 0 auto 3rem auto;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.2);
+    }
+    .contact-section h2 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+    .contact-info {
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    .contact-info span {
+      display: block;
+      margin: 0.4rem 0;
+    }
+    .contact-email {
+      margin-top: 1rem;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: #004d00;
+      color: #a9d08e;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .services-list {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Solar India Pali</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="contact-number">Call: +91 83790 79005</div>
+  </header>
+
+  <section class="hero" role="banner" aria-label="Solar India Banner">
+    <div class="hero-content">
+      <h1>Reliable Solar Solutions</h1>
+      <p>High-quality solar solutions to reduce electricity costs and promote clean energy for homes, farms, and businesses.</p>
+      <a href="#contact" class="btn-primary" role="button">Contact Us Now</a>
+    </div>
+  </section>
+
+  <section id="services" class="services" aria-labelledby="services-heading">
+    <h2 id="services-heading">Our Services</h2>
+    <div class="services-list">
+      <div class="service-item" tabindex="0" aria-label="Solar System Installation">
+        <h3>Solar System Installation</h3>
+        <p>Expert installations for residential, commercial and industrial solar systems with top quality and efficiency.</p>
+      </div>
+      <div class="service-item" tabindex="0" aria-label="Solar Street Light and Highmast Installation">
+        <h3>Solar Street Light & Highmast Installation</h3>
+        <p>Durable solar street lighting and highmast systems for safer and eco-friendly outdoor lighting solutions.</p>
+      </div>
+      <div class="service-item" tabindex="0" aria-label="Solar Pump Installation">
+        <h3>Solar Pump Installation</h3>
+        <p>Reliable solar-powered pumps designed for farms, warehouses, and remote locations with backup support.</p>
+      </div>
+      <div class="service-item" tabindex="0" aria-label="Solar CCTV and Security Systems">
+        <h3>Solar CCTV & Security Systems</h3>
+        <p>Integrated solar CCTV and security installations ensuring 24/7 surveillance even during power outages.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="catalog-section" aria-labelledby="products-heading">
+    <h2 id="products-heading">Products Catalog</h2>
+    <div class="catalog-grid">
+      <!-- Product Cards with descriptions and placeholder images -->
+      <div class="product-card" tabindex="0">
+        <img src="https://solarenergia.com/wp-content/uploads/2019/08/solar-panels.png" alt="Solar On-Grid System" />
+        <h4>Solar On-Grid System</h4>
+        <ul>
+          <li>Highly efficient & directly connected to electricity grid</li>
+          <li>Zero battery maintenance</li>
+          <li>Huge electricity bill savings</li>
+          <li>Net metering support</li>
+          <li>Best for homes, businesses & industries</li>
+        </ul>
+      </div>
+      <div class="product-card" tabindex="0">
+        <img src="https://cdn-icons-png.flaticon.com/512/2930/2930546.png" alt="Solar Off-Grid System" />
+        <h4>Solar Off-Grid System</h4>
+        <ul>
+          <li>Works fully on solar + battery</li>
+          <li>Ensures power during outages</li>
+          <li>Ideal for farms, villages, bungalows & remote sites</li>
+        </ul>
+      </div>
+      <div class="product-card" tabindex="0">
+        <img src="https://cdn-icons-png.flaticon.com/512/2282/2282486.png" alt="Solar Hybrid System" />
+        <h4>Solar Hybrid System</h4>
+        <ul>
+          <li>Combination of On-Grid + Off-Grid tech</li>
+          <li>Works with grid + battery backup</li>
+          <li>Flexible & efficient for all power needs</li>
+        </ul>
+      </div>
+      <div class="product-card" tabindex="0">
+        <img src="https://cdn-icons-png.flaticon.com/512/3196/3196464.png" alt="Solar Street Lights" />
+        <h4>Solar Street Lights</h4>
+        <ul>
+          <li>Automatic dusk-to-dawn energy efficient lighting</li>
+          <li>Weatherproof & maintenance-free</li>
+          <li>Perfect for farms & parking areas</li>
+        </ul>
+      </div>
+      <div class="product-card" tabindex="0">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Solar Torch" />
+        <h4>Solar Torch</h4>
+        <ul>
+          <li>Portable, bright & reliable</li>
+          <li>High-beam LED</li>
+          <li>Long backup, ideal for travel & emergencies</li>
+        </ul>
+      </div>
+      <div class="product-card" tabindex="0">
+        <img src="https://cdn-icons-png.flaticon.com/512/1355/1355570.png" alt="Solar Lantern" />
+        <h4>Solar Lantern</h4>
+        <ul>
+          <li>Eco-friendly LED lighting for indoor/outdoor use</li>
+          <li>Multiple brightness modes</li>
+          <li>Lightweight & durable</li>
+          <li>Perfect for villages, camping & daily home use</li>
+        </ul>
+      </div>
+      <div class="product-card" tabindex="0">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828899.png" alt="Solar Charging Light" />
+        <h4>Solar Charging Light</h4>
+        <ul>
+          <li>Dual-purpose emergency light + mobile charger</li>
+          <li>Solar + USB charging</li>
+          <li>Power bank functionality</li>
+          <li>Perfect for travelers & power cuts</li>
+        </ul>
+      </div>
+      <div class="product-card" tabindex="0">
+        <img src="https://cdn-icons-png.flaticon.com/512/929/929613.png" alt="Electric Bulbs" />
+        <h4>All Types of Electric Bulbs</h4>
+        <ul>
+          <li>Premium quality LED bulbs for every need</li>
+          <li>All wattages available</li>
+          <li>Long life, low power consumption</li>
+          <li>Home, office & commercial use</li>
+        </ul>
+      </div>
+      <div class="product-card" tabindex="0">
+        <img src="https://cdn-icons-png.flaticon.com/512/686/686308.png" alt="Solar Halogen Light" />
+        <h4>Solar Halogen Light</h4>
+        <ul>
+          <li>High-intensity solar powered outdoor lighting</li>
+          <li>Weatherproof & durability</li>
+          <li>Perfect for farms, parking areas & open grounds</li>
+        </ul>
+      </div>
+      <div class="product-card" tabindex="0">
+        <img src="https://cdn-icons-png.flaticon.com/512/633/633600.png" alt="Solar Pump" />
+        <h4>Solar Pump</h4>
+        <ul>
+          <li>Powerful 24x7 surveillance without electricity</li>
+          <li>Solar powered + battery backup</li>
+          <li>4G/WiFi support</li>
+          <li>Best for farms, warehouses, construction sites</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Us - Solar India Pali Branch</h2>
+    <p class="contact-info" role="contentinfo" aria-label="Address">
+      At & Post Pali, Taluka - Sudhagad, Dist. Raigad, Maharashtra - 410205
+    </p>
+    <p class="contact-info" aria-label="Phone numbers">
+      📞 +91 72181 69200 <br />
+      📞 +91 83790 79005
+    </p>
+    <p class="contact-email" aria-label="Email address">✉ solariindiaprakash@gmail.com</p>
+  </section>
+
+  <footer>
+    &copy; 2024 Solar India Pali Branch. All Rights Reserved.
+  </footer>
+</body>
+</html>

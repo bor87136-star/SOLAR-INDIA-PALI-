@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Solar India Pali Branch</title>
+<style>
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background: #f4f7f3;
+    color: #212121;
+  }
+  header {
+    background: #0a472d;
+    color: white;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  section.hero {
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    position: relative;
+  }
+  section.hero::after {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 68, 20, 0.6);
+    z-index: 0;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .hero-content h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  .hero-content p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+  .btn-contact {
+    display: inline-block;
+    margin: 1.8rem auto 0;
+    padding: 0.75rem 2.2rem;
+    background: #ffd700;
+    color: #004d00;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 0 10px #ffd700aa;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  .services, .products, .contact {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+  }
+  h2 {
+    color: #004d00;
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: 1.5px;
+  }
+  /* Services Box */
+  .services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .service-item {
+    background: #e9f4e8;
+    color: #124412;
+    border-radius: 15px;
+    padding: 1.25rem 1.5rem;
+    width: 260px;
+    box-shadow: 0 2px 8px #abcdaa88;
+    cursor: default;
+    font-weight: 600;
+  }
+  .service-item::before {
+    content: "➤ ";
+    color: #007700;
+  }
+
+  /* Products grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    gap: 1.25rem;
+  }
+  .product-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    padding: 1rem;
+    text-align: center;
+  }
+  .product-card img {
+    width: 90px;
+    margin-bottom: 1rem;
+    object-fit: contain;
+  }
+  .product-card h3 {
+    font-size: 1.15rem;
+    color: #235423;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .product-card ul {
+    list-style-type: disc;
+    padding-left: 18px;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #444;
+  }
+  .product-card ul li {
+    margin-bottom: 0.3rem;
+  }
+
+  /* Contact Section */
+  .contact-info {
+    background: #004d00;
+    color: white;
+    border-radius: 15px;
+    padding: 2rem 1.5rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .contact-info a {
+    color: #ffd700;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  /* Footer */
+  footer {
+    background: #062b09;
+    color: #88b37a;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .services-list, .product-grid {
+      flex-direction: column;
+      grid-template-columns: 1fr;
+    }
+    .service-item, .product-card {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>Solar India Pali Branch</header>
+
+<section class="hero" role="banner">
+  <div class="hero-content">
+    <h1>Solar India</h1>
+    <p>Solar India delivers reliable and high-quality solar solutions designed to reduce electricity costs and promote clean energy. We specialize in solar installations, lighting systems, and sustainable power solutions for homes, farms, and businesses.</p>
+    <a href="#contact" class="btn-contact" aria-label="Contact us">Contact Us</a>
+  </div>
+</section>
+
+<section class="services" aria-labelledby="services-title">
+  <h2 id="services-title">Our Services</h2>
+  <div class="services-list">
+    <div class="service-item">Solar System Installation</div>
+    <div class="service-item">Solar Street Light & Highmast Installation</div>
+    <div class="service-item">Solar Pump Installation</div>
+    <div class="service-item">Solar CCTV & Security Systems</div>
+  </div>
+</section>
+
+<section class="products" aria-labelledby="products-title">
+  <h2 id="products-title">Products Catalog</h2>
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="https://solarenergia.com/wp-content/uploads/2019/08/solar-panels.png" alt="Solar On-Grid System">
+      <h3>Solar On-Grid System</h3>
+      <ul>
+        <li>Highly efficient solar solution directly connected to the electricity grid</li>
+        <li>Zero battery maintenance</li>
+        <li>Huge electricity bill savings</li>
+        <li>Net metering support</li>
+        <li>Best for homes, businesses & industries</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2930/2930546.png" alt="Solar Off-Grid System">
+      <h3>Solar Off-Grid System</h3>
+      <ul>
+        <li>Works fully on solar + battery</li>
+        <li>Ensures power during outages</li>
+        <li>Ideal for farms, villages, bungalows & remote sites</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2282/2282486.png" alt="Solar Hybrid System">
+      <h3>Solar Hybrid System</h3>
+      <ul>
+        <li>Combination of On-Grid + Off-Grid technology</li>
+        <li>Works with grid + battery backup</li>
+        <li>Flexible & efficient for all power needs</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3196/3196464.png" alt="Solar Street Lights">
+      <h3>Solar Street Lights</h3>
+      <ul>
+        <li>Automatic dusk-to-dawn energy-efficient lighting</li>
+        <li>Weatherproof & maintenance-free</li>
+        <li>Perfect for farms & parking areas</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Solar Torch">
+      <h3>Solar Torch</h3>
+      <ul>
+        <li>Portable, bright & reliable</li>
+        <li>High-beam LED</li>
+        <li>Long backup, ideal for travel & emergencies</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1355/1355570.png" alt="Solar Lantern">
+      <h3>Solar Lantern</h3>
+      <ul>
+        <li>Eco-friendly LED lighting for indoor/outdoor use</li>
+        <li>Multiple brightness modes</li>
+        <li>Lightweight & durable</li>
+        <li>Ideal for villages, camping & daily home use</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828899.png" alt="Solar Charging Light">
+      <h3>Solar Charging Light</h3>
+      <ul>
+        <li>Dual-purpose emergency light + mobile charger</li>
+        <li>Solar + USB charging</li>
+        <li>Power bank functionality</li>
+        <li>Perfect for travelers & power cuts</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/929/929613.png" alt="Electric Bulbs">
+      <h3>All Types of Electric Bulbs</h3>
+      <ul>
+        <li>Premium quality LED bulbs for every need</li>
+        <li>All wattages available</li>
+        <li>Long life, low power consumption</li>
+        <li>Home, office & commercial use</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/686/686308.png" alt="Solar Halogen Light">
+      <h3>Solar Halogen Light</h3>
+      <ul>
+        <li>High-intensity solar powered outdoor lighting</li>
+        <li>Weatherproof & durable</li>
+        <li>Perfect for farms, parking areas & open grounds</li>
+      </ul>
+    </div>
+
+    <div class="product-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/633/633600.png" alt="Solar Pump">
+      <h3>Solar Pump</h3>
+      <ul>
+        <li>Powerful 24x7 surveillance without electricity</li>
+        <li>Solar powered + battery backup</li>
+        <li>4G/WiFi support</li>
+        <li>Best for farms, warehouses, construction sites</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <h2 id="contact-title">Contact Us</h2>
+  <div class="contact-info" role="contentinfo">
+    <p>Solar India Pali Branch</p>
+    <p>At & Post Pali, Taluka - Sudhagad,<br>Dist. Raigad, Maharashtra - 410205</p>
+    <p>Phone: <a href="tel:+917218169200">+91 72181 69200</a> | <a href="tel:+918379079005">+91 83790 79005</a></p>
+    <p>Email: <a href="mailto:solariindiaprakash@gmail.com">solariindiaprakash@gmail.com</a></p>
+  </div>
+</section>
+
+<footer>
+  &copy; 2024 Solar India Pali Branch. All Rights Reserved.
+</footer>
+
+</body>
+  </html>
